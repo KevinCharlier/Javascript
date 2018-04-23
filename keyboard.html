@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    div {
+      width: 150px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 10px;
+      float: left;
+      padding: 30px;
+      text-align: center;
+      background-color: lightgray;
+    }
+
+    .mask_element {
+      display: none;
+    }
+
+    .highlight {
+      opacity: 0.2;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>keyboard</h1>
+
+  <!-- Exercices 1 -->
+  <div id="character">
+    <h2>character</h2>
+    <p>Presser sur une numéro de 0 à 9</p>
+  </div>
+
+  <!-- Exercices 2 -->
+  <div id="up">
+    <h2>up</h2>
+  </div>
+
+  <div id="down">
+    <h2>down</h2>
+  </div>
+
+  <div id="left">
+    <h2>left</h2>
+  </div>
+
+  <div id="right">
+    <h2>right</h2>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // Exo 1
+
+  let colors = document.getElementById("character");
+  let color = (event) => {
+    switch (event.key) { // L'instruction switch évalue une expression et, selon le résultat obtenu et le cas associé, exécute les instructions correspondantes.
+      case "0":
+        color = "aqua";
+        break;
+
+      case "1":
+        color = "white";
+        break;
+
+      case "2":
+        color = "blue";
+        break;
+
+      case "3":
+        color = "purple";
+        break;
+
+      case "4":
+        color = "green";
+        break;
+
+      case "5":
+        color = "lime";
+        break;
+
+      case "6":
+        color = "pink";
+        break;
+
+      case "7":
+        color = "red";
+        break;
+
+      case "8":
+        color = "yellow";
+        break;
+
+      case "9":
+        color = "teal";
+        break;
+    }
+    colors.style.backgroundColor = color;
+  }
+
+  window.addEventListener('keydown', color)
+
+  // Exo 2
+
+let up = document.getElementById("up")
+let down = document.getElementById("down")
+let left = document.getElementById("left")
+let right = document.getElementById("right")
+
+let opacity = (event) => {
+  switch (event.key) {
+    case "ArrowUp":
+      up.classList.add("highlight");
+      break;
+    case "ArrowDown":
+      down.classList.add("highlight");
+      break;
+    case "ArrowLeft":
+      left.classList.add("highlight");
+      break;
+    case "ArrowRight":
+      right.classList.add("highlight");
+      break;
+  }
+}
+
+let back = (event) => {
+  switch (event.key) {
+    case "ArrowUp":
+      up.classList.remove("highlight");
+      break;
+    case "ArrowDown":
+      down.classList.remove("highlight");
+      break;
+    case "ArrowLeft":
+      left.classList.remove("highlight");
+      break;
+    case "ArrowRight":
+      right.classList.remove("highlight");
+      break;
+  }
+}
+
+window.addEventListener("keydown", opacity);
+window.addEventListener("keyup", back);
+</script>

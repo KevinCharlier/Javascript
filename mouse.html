@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    div {
+      width: 150px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 10px;
+      float: left;
+      padding: 30px;
+      text-align: center;
+      background-color: lightgray;
+    }
+  </style>
+  <script>
+    
+  let disparaitre = () => { // Faire disparaitre les divs de class "hoverMe" lorsque l'on passe la souris dessus
+    let a = document.getElementsByClassName("hoverMe")
+    for(i=0; i < a.length; i++){
+      a[i].style.display = "none";
+    } 
+  }
+
+  let apparaitre = () => { // Faire apparaitre les divs de class "hoverMe" lorsque l'on passe la souris sur l' id "reset"
+    let b = document.getElementById("reset")
+    let a = document.getElementsByClassName("hoverMe")
+    for(i=0; i < a.length; i++){
+      a[i].style.display = "block";
+    }  
+  }
+
+  let x = () => { 
+    let x = document.getElementsByClassName("axe-x")
+    for(i=0; i < x.length; i++){
+      x[i].innerHTML = "X:" + event.clientX;
+    } 
+  }
+
+  let y = () => { 
+    let y = document.getElementsByClassName("axe-y")
+    for(i=0; i < y.length; i++){
+      y[i].innerHTML = "Y:" + event.clientY;
+    } 
+  }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Mouse</h1>
+  <!-- Exercices 1 -->
+  <div onmouseover="disparaitre()" class="hoverMe">
+    <h2>mouseover</h2>
+  </div>
+
+  <div onmouseover="disparaitre()" class="hoverMe">
+    <h2>mouseover</h2>
+  </div>
+
+  <div onmouseover="disparaitre()" class="hoverMe">
+    <h2>mouseover</h2>
+  </div>
+  <div>
+  </div>
+  <div>
+  </div>
+  <div>
+  </div>
+
+  <!-- Exercices 2 -->
+  <div onmouseover="apparaitre()" id="reset">
+      <h2>reset</h2>
+    </div>
+
+  <!-- Exercices 3 -->
+  <div onmouseover="x()" class="axe-x">
+  </div>
+
+  <div onmouseover="y()" class="axe-y">
+  </div>
+
+</body>
+
+</html>
