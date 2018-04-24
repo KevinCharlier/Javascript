@@ -32,17 +32,13 @@
   }
 
   let x = () => { 
-    let x = document.getElementsByClassName("axe-x")
-    for(i=0; i < x.length; i++){
-      x[i].innerHTML = "X:" + event.clientX;
-    } 
+    let x = document.getElementById("axe-x")
+      x.innerHTML = "X:" + event.clientX;
   }
 
-  let y = () => { 
-    let y = document.getElementsByClassName("axe-y")
-    for(i=0; i < y.length; i++){
-      y[i].innerHTML = "Y:" + event.clientY;
-    } 
+let y = () => { 
+    let y = document.getElementById("axe-y")
+      y.innerHTML = "Y:" + event.clientY;
   }
 
 
@@ -76,10 +72,10 @@
     </div>
 
   <!-- Exercices 3 -->
-  <div onmouseover="x()" class="axe-x">
+  <div onmouseover="x()" id="axe-x">
   </div>
 
-  <div onmouseover="y()" class="axe-y">
+  <div onmouseover="y()" id="axe-y">
   </div>
 
 </body>
