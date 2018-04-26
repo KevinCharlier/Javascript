@@ -2,6 +2,18 @@ body{
     background-color: rgb(245, 221, 220);
 }
 
-.main{
+#main, #affichage, .buttons{
     text-align: center;
+}
+
+.buttons, #save{
+    padding-top: 50px;
+}
+
+img:hover {
+    opacity: 0.75 ;
+}
+
+#affichage {
+    padding-top: 25px;
 }

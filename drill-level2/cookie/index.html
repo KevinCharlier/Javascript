@@ -10,13 +10,28 @@
 </head>
 
 <body>
-  <div class="main">
-<p id="cookie"><a id="click" href="#" onclick="add()"><img src="cookie.png"></a></p>
-<p id="score">Vous avez : <input type="text" id="text" disabled> cookie(s)</p>
-<p id="reset"><button><a href="#" onclick="save()">Save</a></button></p>
-<p id="reset"><button><a href="#" onclick="load()">Load</a></button></p>
-</div>
-
+  <div id="main">
+    <p id="cookie">
+      <a id="clic" href="#" onclick="add();affichageScore()">
+        <img src="cookie.png">
+      </a>
+    </p>
+    <p id="save">
+      <button>
+        <a href="#" onclick="save()">Save</a>
+      </button>
+    </p>
+    <p id="load">
+      <button>
+        <a href="#" onclick="load()">Load</a>
+      </button>
+    </p>
+  </div>
+  <div id="affichage">
+  </div>
+  <div class="buttons">
+    <input id="multiplier" type="button" value="">
+  </div>
 
   <script src="app.js"></script>
 </body>
