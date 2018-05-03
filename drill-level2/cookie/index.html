@@ -12,7 +12,7 @@
 <body>
   <div id="main">
     <p id="cookie">
-      <a id="clic" href="#" onclick="add();affichageScore()">
+      <a id="clic" href="#" onclick="add()">
         <img src="cookie.png">
       </a>
     </p>
@@ -30,9 +30,9 @@
   <div id="affichage">
   </div>
   <div class="buttons">
-    <input id="multiplier" type="button" value="">
-    <input id="autoclick" type="button" value="">
-    <input id="bonus" type="button" value="">
+    <input onclick="multiplicateur()" id="multiplier" type="button" value="">
+    <input onclick="autoclicker()" id="autoclick" type="button" value="">
+    <input onclick="upScore()" id="bonus" type="button" value="">
   </div>
 
   <script src="app.js"></script>
