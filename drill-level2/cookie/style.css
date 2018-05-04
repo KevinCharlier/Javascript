@@ -1,19 +1,141 @@
-body{
-    background-color: rgb(245, 221, 220);
+body {
+  align-items: center;
+  background: #fcf3ec;
+  font-family: "Titan One", cursive;
+  padding-top: 25px;
 }
 
-#main, #affichage, .buttons{
-    text-align: center;
+h1 {
+  font-weight: lighter;
 }
 
-.buttons, #save{
-    padding-top: 50px;
+#main,
+#affichage,
+.buy {
+  text-align: center;
+}
+
+#save,
+#load {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+}
+
+.buy,
+#save {
+  padding-top: 50px;
 }
 
 img:hover {
-    opacity: 0.75 ;
+  opacity: 0.75;
 }
 
 #affichage {
-    padding-top: 25px;
+  padding-top: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #715447;
+}
+
+.button {
+  --offset: 10px;
+  --border-size: 2px;
+  display: block;
+  position: relative;
+  padding: 1.5em 3em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #e7be83;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: background 0.8s ease;
+}
+.button:hover {
+  background: rgba(100, 0, 0, 0.03);
+}
+.button__horizontal,
+.button__vertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  will-change: transform;
+}
+.button__horizontal::before,
+.button__vertical::before {
+  content: "";
+  position: absolute;
+  border: inherit;
+}
+.button__horizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+.button__horizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+.button:hover .button__horizontal {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+}
+.button__vertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+.button__vertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+.button:hover .button__vertical {
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
+.buttoN {
+  background: linear-gradient(135deg, #967E6E 0%, #F0CC96 100%);
+  margin: 2rem auto;
+  max-width: 400px;
+  border: none;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  padding: 20px 60px;
+  cursor: pointer;
+}
+
+.buttoN:hover {
+  animation: nom_anim_bouton1 1s infinite alternate;
+}
+
+@keyframes nom_anim_bouton1 {
+  from {
+    box-shadow: 0 0 5px #eabe60;
+  }
+
+  to {
+    box-shadow: 0 0 15px hsl(49, 78%, 25%);
+  }
 }

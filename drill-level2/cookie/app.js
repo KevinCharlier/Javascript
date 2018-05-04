@@ -6,7 +6,7 @@ let autoclick = document.getElementById("autoclick");
 let bonus = document.getElementById("bonus");
 
 let score = 0;
-let click = 1
+let click = 1;
 let multiplierCost = 25;
 const autoclickCost = 100;
 let bonusCost = 250;
@@ -17,7 +17,7 @@ autoclick.disabled = true;
 bonus.disabled = true;
 
 let add = () => {
-  score = score + click
+  score = score + click;
   document.title = score + " Cookies";
 };
 
@@ -66,8 +66,8 @@ let disabled = () => {
 
 let multiplicateur = () => {
   score = score - multiplierCost;
-  click++
-  multiplier++
+  click++;
+  multiplier++;
   multiplierCost = multiplierCost * multiplier;
   disabled();
 };
@@ -80,12 +80,18 @@ let autoclicker = () => {
 
 let upScore = () => {
   score = score - bonusCost;
+  click = click * 2;
+  setTimeout(end, 30000);
   disabled();
 };
 
-let time = () => {
-  score++
-}
+let end = () => {
+  click = click / 2;
+};
 
-setInterval(affichageScore, 100)
-setInterval(affichageBoutons, 100)
+let time = () => {
+  score++;
+};
+
+setInterval(affichageScore, 100);
+setInterval(affichageBoutons, 100);
